@@ -10,7 +10,7 @@ namespace IDF_OOP
     {
         private static string _date_of_establishment = "26/05/1948";
         private static string _name_of_commander;
-        private static Dictionary<string, List<Attack_options>> _units = new Dictionary<string, List<Attack_options>>();
+        private static Dictionary<string, List <Attack_options>> _units = new Dictionary<string, List<Attack_options>>();
 
         public static string Getdate_of_establishment()
         {
@@ -24,10 +24,7 @@ namespace IDF_OOP
         {
             _name_of_commander = name;
         }
-        public static List<string> Getattack_capabilities()
-        {
-            return  new List<string>(_attack_capabilities); 
-        }
+
         public static void  setattack_capabilities(Attack_options AttackTool)
         {
             if (!_units.ContainsKey(AttackTool.GetName()))
@@ -35,6 +32,10 @@ namespace IDF_OOP
                 _units[AttackTool.GetName()] = new List<Attack_options>();
             }
             _units[AttackTool.GetName()].Add(AttackTool);
+        }
+        public static Dictionary<string,List<Attack_options>> GetUnits()
+        {
+            return _units;
         }
 
     }

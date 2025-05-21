@@ -10,8 +10,10 @@ namespace IDF_OOP
     {
         static void Main(string[] args)
         {
-             Idf.Getattack_capabilities();
-            Console.WriteLine(Idf.Getattack_capabilities()[0]);
+            Attack_options  plane = new Plane(0);
+            Console.WriteLine(Idf.GetUnits()["Plane unit"][0].IsAvailable());
+            
+            
         }
     }
 }
