@@ -9,18 +9,22 @@ namespace IDF_OOP
     public class Terrorist
     {
         private string _name;
-        private string _rank;
+        private int _rank;
         private string _status;
-        private string _weapon;
+        private string _PersonalNumber;
+        private List<string>_weapon = new List<string>();
         private string _location;
 
-        public Terrorist(string name, string rank, string status, string weapon, string location)
+
+        public Terrorist(string name, int rank, string status, string weapon, string location, string personalNumber)
         {
             _name = name;
             _rank = rank;
             _status = status;
-            _weapon = weapon;
+            _weapon.Add(weapon);
             _location = location;
+            _PersonalNumber = personalNumber;
+
 
             Hamas.AddTerrorist(this);
             
@@ -35,20 +39,21 @@ namespace IDF_OOP
             return _name;
         }
 
-        public void SetRank(string rank)
+        public void SetRank(int rank)
         {
-            _rank = rank;
+            if (rank < 6 && rank > 0) _rank = rank;
+            else Console.WriteLine("Ranks must be between 1 and 5!");
+
         }
-        public string GetDateOfEstablishment()
+        public int GetRank()
         {
             return _rank;
-        }
+        }        
 
         public void SetStatus(string status)
         {
             _status = status;
         }
-
         public string GetStatus()
         {
             return _status;
@@ -56,23 +61,36 @@ namespace IDF_OOP
 
         public void SetWeapon(string weapon)
         {
-            _weapon = weapon;
+            _weapon.Add(weapon);
         }
-
-        public string GetWeapon()
+        public List<string> GetWeapon()
         {
-            return _weapon;
+            return new List<string>(_weapon);
         }
 
         public void SetLocation(string location)
         {
             _location = location;
         }
-
         public string GetLocation()
         {
             return _location;
         }
+
+        public void SetPersonalNumber(string personalNumber)
+        {
+            _PersonalNumber = personalNumber;
+        }
+        public string GetPersonalNumber()
+        {
+            return _PersonalNumber;
+        }
+
+        public string GetTerroristDetaild()
+        {
+            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: {this.GetStatus()}\nLocation: {this.GetLocation()}";
+        }
+       
 
         
 
