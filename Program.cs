@@ -10,6 +10,8 @@ namespace IDF_OOP
     {
         static void Main(string[] args)
         {
+             Idf.Getattack_capabilities();
+            Console.WriteLine(Idf.Getattack_capabilities()[0]);
         }
     }
 }
