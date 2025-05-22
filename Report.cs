@@ -10,14 +10,14 @@ namespace IDF_OOP
     {
         private Terrorist _terrorist;
         private string _location;
-        private string _date;
+        private DateTime _date = DateTime.Now;
         private string _message;
 
-        public Report(Terrorist terrorist, string location, string date, string message)
+        public Report(Terrorist terrorist, string location, string message)
         {
             _terrorist = terrorist;
             _location = location;
-            _date = date;
+            
             _message = message;
 
         }
@@ -35,12 +35,7 @@ namespace IDF_OOP
         {
             return _location;
         }
-
-        public void SetDate(string date)
-        { 
-            _date = date;
-        }
-        public string GetDate()
+        public DateTime GetDate()
         {
             return _date;
         }
