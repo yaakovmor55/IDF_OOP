@@ -15,8 +15,8 @@ namespace IDF_OOP
             Console.WriteLine(Idf.GetUnits()["Plane unit"][0].IsAvailable());
 
 
+        
 
-            Terrorist terrorist = new Terrorist("Muhamad", 4, "Not alive", "gun", "out", "6516");
             
 
         }

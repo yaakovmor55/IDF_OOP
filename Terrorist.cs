@@ -13,16 +13,14 @@ namespace IDF_OOP
         private string _status;
         private string _PersonalNumber;
         private List<string>_weapon = new List<string>();
-        private string _location;
 
 
-        public Terrorist(string name, int rank, string status, string weapon, string location, string personalNumber)
+        public Terrorist(string name, int rank, string status, string weapon, string personalNumber)
         {
             _name = name;
             _rank = rank;
             _status = status;
             _weapon.Add(weapon);
-            _location = location;
             _PersonalNumber = personalNumber;
 
 
@@ -68,15 +66,6 @@ namespace IDF_OOP
             return new List<string>(_weapon);
         }
 
-        public void SetLocation(string location)
-        {
-            _location = location;
-        }
-        public string GetLocation()
-        {
-            return _location;
-        }
-
         public void SetPersonalNumber(string personalNumber)
         {
             _PersonalNumber = personalNumber;
@@ -88,7 +77,7 @@ namespace IDF_OOP
 
         public string GetTerroristDetaild()
         {
-            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: {this.GetStatus()}\nLocation: {this.GetLocation()}";
+            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: {this.GetStatus()}";
         }
        
 
