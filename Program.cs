@@ -17,7 +17,7 @@ namespace IDF_OOP
             
 
             Terrorist terrorist = new Terrorist("Muhamad", 4, "Not alive", "gun", "out", "6516");
-            Console.WriteLine(terrorist.GetTerroristDet
+            Console.WriteLine(terrorist.GetTerroristDetaild());
         }
     }
 }
