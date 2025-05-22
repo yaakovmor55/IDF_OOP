@@ -11,13 +11,14 @@ namespace IDF_OOP
         static void Main(string[] args)
         {
 
-            Attack_options  plane = new Plane(0);
+            Attack_options plane = new Plane(0);
             Console.WriteLine(Idf.GetUnits()["Plane unit"][0].IsAvailable());
-            
+
+
+        
+
             
 
-            Terrorist terrorist = new Terrorist("Muhamad", 4, "Not alive", "gun", "out", "6516");
-            Console.WriteLine(terrorist.GetTerroristDet
         }
     }
 }
