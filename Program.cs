@@ -10,6 +10,8 @@ namespace IDF_OOP
     {
         static void Main(string[] args)
         {
+            Terrorist terrorist = new Terrorist("Muhamad", 4, "Not alive", "gun", "out", "6516");
+            Console.WriteLine(terrorist.GetTerroristDetaild());
         }
     }
 }
