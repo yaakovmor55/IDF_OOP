@@ -11,14 +11,17 @@ namespace IDF_OOP
     {
         private static List<Report> _reportsList = new List<Report>();
 
-
         public static void AddReport(Report newreport)
         {
             _reportsList.Add(newreport);
         }
         public static List<Report> GetReportsOfTerrorits(Terrorist terrorist)
         {
+            if (_reportsList.Count == 0) return new List<Report>();
             List<Report> result = new List<Report>();
+
+            
+
             foreach (Report report in _reportsList)
             {
                 if (report.GetTerrorist() == terrorist)
@@ -27,78 +30,26 @@ namespace IDF_OOP
                 }
 
             }
-            if (result.Count == 0)
-            {
-                Console.WriteLine("no reports");
-            }
+ 
             return result;
         }
         public static Report GetLastReport(List<Report> listreports)
         {
+            if (listreports == null  || listreports.Count==0) return null;
             return listreports[listreports.Count - 1];
-        }
-        public static Terrorist GetMostReportedTerrorist(List<Terrorist> listterrorist)
-        {
-            if (listterrorist.Count == 0)
-            {
-                return null;
-            }
-            Terrorist terrorist = listterrorist[0];
-
-            foreach (Terrorist tr in listterrorist)
-            {
-                if (Aman.GetReportsOfTerrorits(tr).Count > Aman.GetReportsOfTerrorits(terrorist).Count)
-                {
-                    terrorist = tr;
-                }
-            }
-            return terrorist;
         }
 
         public static List<Report> GetValidReports()
         {
+            
             DateTime now = DateTime.Now;
             return _reportsList.Where(report => (now - report.GetDate()).TotalHours <= 24).ToList();
         }
 
-        public static Terrorist GetMostDangerousTerrorist(List<Terrorist> listTerrorists)
-        {
-            Terrorist mostDangerous = listTerrorists[0];
-            int maxScore =QualityRatingOfaTerrorist(mostDangerous);
 
-            foreach (Terrorist tr in listTerrorists)
-            {
-                int currentScore = QualityRatingOfaTerrorist(tr);
-                if (currentScore > maxScore)
-                {
-                    mostDangerous = tr;
-                    maxScore = currentScore;
-                }
-            }
-            return mostDangerous;
 
-        }
-        public static  int QualityRatingOfaTerrorist(Terrorist terrorist)
-        {
-            int score = 0;
-            foreach (string weapon in terrorist.GetWeapon())
-            {
-                switch (weapon.ToLower())
-                {
-                    case "knife":
-                        score += 1;
-                        break;
-                    case "gun":
-                        score += 2;
-                        break;
-                    case "ak47":
-                    case "m16":
-                        score += 3;
-                        break;
-                }
-            }
-            return score * terrorist.GetRank();
-        }
+
+
 
 
 

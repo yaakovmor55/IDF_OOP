@@ -78,8 +78,8 @@ namespace IDF_OOP
         public string GetTerroristDetaild()
         {
 
-=======
-            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: {this.GetStatus()}";
+
+            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: {this.GetStatus()}\n weapan {string.Join(", ", this.GetWeapon())}";
 
         }
        

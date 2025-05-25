@@ -12,25 +12,16 @@ namespace IDF_OOP
     {
         private Terrorist _terrorist;
         private string _location;
-achiya_AMAN_-and_reports
         private DateTime _date;
         private string _message;
 
-        public Report(Terrorist terrorist, string location, string date, string message)
+        public Report(Terrorist terrorist, string location,  string message)
         {
             _terrorist = terrorist;
             _location = location;
-            _date = DateTi
-        private DateTime _date = DateTime.Now;
-        private string _message;
-
-        public Report(Terrorist terrorist, string location, string message)
-        {
-            _terrorist = terrorist;
-            _location = location;
-            
- main
+            _date = DateTime.Now;
             _message = message;
+
 
         }
 
