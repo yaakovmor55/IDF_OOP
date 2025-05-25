@@ -14,13 +14,21 @@ namespace IDF_OOP
             Attack_options plane = new Plane(0);
             Console.WriteLine(Idf.GetUnits()["Plane unit"][0].IsAvailable());
 
+            
+
+
+
+
+
+
+
 
            
 
         
 
             
-
+ main
         }
     }
 }
