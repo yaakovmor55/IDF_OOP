@@ -88,7 +88,7 @@ namespace IDF_OOP
 
         public string GetTerroristDetaild()
         {
-            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: {this.GetStatus()}\nLocation: {this.GetLocation()}";
+            return $"Name: {this.Getname()}\nRank: {this.GetRank()}\nPersonal Number: {this.GetPersonalNumber()}\nStatus: ";
         }
        
 
