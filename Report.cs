@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IDF_OOP
-{ 
+
+{
+
     internal class Report
     {
         private Terrorist _terrorist;
         private string _location;
+achiya_AMAN_-and_reports
         private DateTime _date;
         private string _message;
 
@@ -17,7 +20,16 @@ namespace IDF_OOP
         {
             _terrorist = terrorist;
             _location = location;
-            _date = DateTime.Now;
+            _date = DateTi
+        private DateTime _date = DateTime.Now;
+        private string _message;
+
+        public Report(Terrorist terrorist, string location, string message)
+        {
+            _terrorist = terrorist;
+            _location = location;
+            
+ main
             _message = message;
 
         }

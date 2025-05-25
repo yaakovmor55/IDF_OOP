@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+achiya_AMAN_-and_reports
     <Compile Include="Aman.cs" />
+
+main
     <Compile Include="Artillery.cs" />
     <Compile Include="Attack_options.cs" />
     <Compile Include="Drones.cs" />
