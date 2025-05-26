@@ -16,6 +16,7 @@ namespace IDF_OOP
         {
             _amount_of_plane++;
             _amount_of_fuel = amount_of_fule;
+            _id = _globalId ++;
             Idf.setattack_capabilities(this);
         }
 
@@ -43,6 +44,9 @@ namespace IDF_OOP
         {
             return _name;
         }
-
+        public override int GetID()
+        {
+            return _id;
+        }
     }
 }

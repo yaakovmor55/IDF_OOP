@@ -16,6 +16,7 @@ namespace IDF_OOP
         public Artillery(int amount_of_fule)
         {
             _amount_of_Artillery++;
+            _id = _globalId++;
             _amount_of_fuel = amount_of_fule;
             Idf.setattack_capabilities(this);
         }
@@ -43,6 +44,10 @@ namespace IDF_OOP
         public override string GetName()
         {
             return _name;
+        }
+        public override int GetID()
+        {
+            return _id;
         }
 
     }

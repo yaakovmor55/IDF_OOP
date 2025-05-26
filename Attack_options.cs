@@ -10,6 +10,8 @@ namespace IDF_OOP
     internal abstract class Attack_options
     {
         protected int _amount_of_fuel;
+        protected static int _globalId = 1;
+        protected int _id;
         //protected int _amount_of_ammunition;
 
         public abstract string EffectiveAgainst();
@@ -19,6 +21,8 @@ namespace IDF_OOP
         public abstract void SetAvailableAttackPatterns();
         public abstract bool IsAvailable();
         public abstract string GetName();
+
+        public abstract int GetID();
 
 
 

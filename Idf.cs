@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,9 +34,30 @@ namespace IDF_OOP
             }
             _units[AttackTool.GetName()].Add(AttackTool);
         }
-        public static Dictionary<string,List<Attack_options>> GetUnits()
+
+        public static string GetAllAttackUnitsDetails()
         {
-            return _units;
+            if (_units == null ||  _units.Count == 0)return null;
+            string result = "##### Information about the attack tool #####\n";
+            foreach (var unit in _units)
+            {
+                result += $" unit type: {unit.Key}\n" +
+                    $" total: {unit.Value.Count}\n";
+                
+
+                foreach(Attack_options attacktool in unit.Value)
+                {
+                    result += $"    ID : {attacktool.GetID()}\n";
+                    result += $"    Available: {attacktool.IsAvailable() }\n";
+                    result += $"    Bomb Type: {attacktool.TypeOfBombs()}\n";
+                    result += $"    Patterns Left: {attacktool.GetAvailableAttackPatterns()}\n";
+                    result += $"    Effective Against: {attacktool.EffectiveAgainst()}\n";
+                   
+                }
+                result += "\n";
+               
+            }
+            return result;
         }
 
     }
